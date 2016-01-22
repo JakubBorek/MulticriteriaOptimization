@@ -13,4 +13,3 @@ namespace MulticriteriaOptimization
         }
     }
 }
-cg fg
