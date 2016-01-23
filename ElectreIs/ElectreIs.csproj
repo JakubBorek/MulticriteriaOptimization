@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{372EF424-D308-432B-A9E3-B9BA2DF8CFA3}</ProjectGuid>
+    <ProjectGuid>{207D9C6C-F385-46B3-808C-2D91D093075A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MulticriteriaOptimization</RootNamespace>
-    <AssemblyName>MulticriteriaOptimization</AssemblyName>
+    <RootNamespace>ElectreIs</RootNamespace>
+    <AssemblyName>ElectreIs</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,16 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ElectreIs\ElectreIs.csproj">
-      <Project>{207d9c6c-f385-46b3-808c-2d91d093075a}</Project>
-      <Name>ElectreIs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\McdaCommon\McdaCommon.csproj">
-      <Project>{89e932d9-7661-4176-ac5f-52b4e59d4c30}</Project>
-      <Name>McdaCommon</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

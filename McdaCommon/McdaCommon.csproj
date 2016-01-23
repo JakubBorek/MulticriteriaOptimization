@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{372EF424-D308-432B-A9E3-B9BA2DF8CFA3}</ProjectGuid>
+    <ProjectGuid>{89E932D9-7661-4176-AC5F-52B4E59D4C30}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MulticriteriaOptimization</RootNamespace>
-    <AssemblyName>MulticriteriaOptimization</AssemblyName>
+    <RootNamespace>McdaCommon</RootNamespace>
+    <AssemblyName>McdaCommon</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,21 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alternative.cs" />
+    <Compile Include="AlternativesSetViewer.cs" />
+    <Compile Include="DataSources\CsvReader.cs" />
+    <Compile Include="DataSources\IAlternativesSource.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ElectreIs\ElectreIs.csproj">
-      <Project>{207d9c6c-f385-46b3-808c-2d91d093075a}</Project>
-      <Name>ElectreIs</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\McdaCommon\McdaCommon.csproj">
-      <Project>{89e932d9-7661-4176-ac5f-52b4e59d4c30}</Project>
-      <Name>McdaCommon</Name>
-    </ProjectReference>
+    <None Include="Data\australian.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
