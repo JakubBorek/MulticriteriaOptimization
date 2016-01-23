@@ -8,6 +8,6 @@ namespace McdaCommon.DataSources
 {
     public interface IAlternativesSource
     {
-        ISet<Alternative> ReadAlternatives();
+        IReadOnlyList<Alternative> ReadAlternatives();
     }
 }

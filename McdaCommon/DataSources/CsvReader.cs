@@ -18,9 +18,9 @@ namespace McdaCommon.DataSources
             this.separator = separator;
             this.criteriaCount = criteriaCount;
         }
-        public ISet<Alternative> ReadAlternatives()
+        public IReadOnlyList<Alternative> ReadAlternatives()
         {
-            var set = new HashSet<Alternative>();
+            var set = new List<Alternative>();
             string line;
             while ((line = fileReader.ReadLine()) != null)
             {

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElectreIs", "ElectreIs\Elec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "McdaCommon", "McdaCommon\McdaCommon.csproj", "{89E932D9-7661-4176-AC5F-52B4E59D4C30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Visualization", "Visualization\Visualization.csproj", "{2175E3B0-4AB3-4AD1-B0C1-D624766F92A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{89E932D9-7661-4176-AC5F-52B4E59D4C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89E932D9-7661-4176-AC5F-52B4E59D4C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89E932D9-7661-4176-AC5F-52B4E59D4C30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2175E3B0-4AB3-4AD1-B0C1-D624766F92A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2175E3B0-4AB3-4AD1-B0C1-D624766F92A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2175E3B0-4AB3-4AD1-B0C1-D624766F92A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2175E3B0-4AB3-4AD1-B0C1-D624766F92A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

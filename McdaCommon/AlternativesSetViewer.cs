@@ -11,23 +11,13 @@ namespace McdaCommon
         public static void printBasicStats(IReadOnlyCollection<Alternative> alternatives)
         {
             var criteriaCount = alternatives.First().Values.Count;
-            for(int i = 0; i < criteriaCount; i++)
+            for (int i = 0; i < criteriaCount; i++)
             {
-                Console.WriteLine("Criterion1 ");
+                Console.WriteLine("Criterion " + i + " ");
                 var max = alternatives.Select(alt => alt.Values[i]).Max();
                 var min = alternatives.Select(alt => alt.Values[i]).Min();
                 Console.Write("max: " + max + " ");
                 Console.WriteLine("min: " + min);
-            }
-        }
-        private class RunningStatsCalculator
-        {
-            private double max;
-            private double min;
-
-            public void process(double value)
-            {
-
             }
         }
     }

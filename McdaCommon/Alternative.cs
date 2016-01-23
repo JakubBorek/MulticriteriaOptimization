@@ -12,7 +12,7 @@ namespace McdaCommon
         public IReadOnlyList<double> Values { get { return values; } }
         public Alternative(IEnumerable<double> values)
         {
-            values = new List<double>(values);
+            this.values = new List<double>(values);
         }
     }
 }
