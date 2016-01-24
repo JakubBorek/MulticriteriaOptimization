@@ -11,37 +11,54 @@ namespace McdaCommon.DataSources
     {
         private readonly StreamReader fileReader;
         private readonly char separator;
-        private readonly int criteriaCount;
-        public CsvReader(string filename, char separator, int criteriaCount)
+        public CsvReader(string filename, char separator)
         {
             fileReader = new StreamReader(filename);
             this.separator = separator;
-            this.criteriaCount = criteriaCount;
         }
         public IReadOnlyList<Alternative> ReadAlternatives()
         {
             var set = new List<Alternative>();
             string line;
+            int counter = 0;
             while ((line = fileReader.ReadLine()) != null)
             {
-                var alternative = alternativeFromLine(line);
+                string name = "alt" + counter;
+                var alternative = alternativeFromLine(name, line);
+                throwIfWrongParametrsCount(alternative);
                 set.Add(alternative);
+                counter++;
             }
             return set;
         }
 
-        private Alternative alternativeFromLine(string line)
+        private Alternative alternativeFromLine(string name, string line)
         {
             var values = splitLine(line).Select(str => Double.Parse(str));
-            return new Alternative(values);
+            return new Alternative(name, values);
         }
 
         private List<string> splitLine(string line)
         {
             var list = line.Split(separator).ToList();
             list.RemoveAll(str => String.IsNullOrWhiteSpace(str));
-            if (list.Count != criteriaCount) { throw new InvalidDataException("Alternative has wrong number of criteria values"); }
             return list;
+        }
+
+        private int? parameterCount;
+        private void throwIfWrongParametrsCount(Alternative alternative)
+        {
+            if (parameterCount == null)
+            {
+                parameterCount = alternative.Values.Count;
+            }
+            else
+            {
+                if (parameterCount != alternative.Values.Count)
+                {
+                    throw new InvalidDataException("Alternative has wrong number of criteria values");
+                }
+            }
         }
     }
 }

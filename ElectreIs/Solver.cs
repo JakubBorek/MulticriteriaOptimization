@@ -43,7 +43,7 @@ namespace ElectreIs
         private double getSuperiorityScore(Alternative first, Alternative second)
         {
             var numerator = GetParameterEnumerable(first, second)
-                .Sum(p => p.Item3.Weight * (p.Item2 - p.Item1 > p.Item3.PreferenceThreshold ? 0 : 1));
+                .Sum(p => p.Item3.Weight * (p.Item2 - p.Item1 > p.Item3.WeakPreferenceThreshold ? 0 : 1));
             var denominator = problem.Parameters.Sum(p => p.Weight);
             return numerator / denominator;
         }
@@ -54,10 +54,7 @@ namespace ElectreIs
 
         private IEnumerable<Tuple<double, double, ParameterProperties>> GetParameterEnumerable(Alternative first, Alternative second)
         {
-            for (int i = 0; i < problem.Parameters.Count; i++)
-            {
-                yield return Tuple.Create(first.Values[i], second.Values[i], problem.Parameters[i]);
-            }
+            return ParametersEnumerator.Enumerate(first, second, problem.Parameters);
         }
 
     }

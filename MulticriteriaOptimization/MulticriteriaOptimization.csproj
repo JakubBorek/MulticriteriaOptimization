@@ -64,6 +64,10 @@
       <Project>{89e932d9-7661-4176-ac5f-52b4e59d4c30}</Project>
       <Name>McdaCommon</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Qualiflex\Qualiflex.csproj">
+      <Project>{4d7b7f51-9258-474c-a0c5-004e4d6c1035}</Project>
+      <Name>Qualiflex</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Visualization\Visualization.csproj">
       <Project>{2175e3b0-4ab3-4ad1-b0c1-d624766f92a0}</Project>
       <Name>Visualization</Name>

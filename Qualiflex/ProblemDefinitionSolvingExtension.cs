@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ElectreIs
+namespace Qualiflex
 {
     public static class ProblemDefinitionSolvingExtension
     {
-        public static bool[,] SolveWithElectreIs(this ProblemDefinition problemDefinition)
+        public static IReadOnlyList<Alternative> SolveWithQualiflex(this ProblemDefinition problemDefinition)
         {
             var solver = new Solver(problemDefinition);
             return solver.Solve();

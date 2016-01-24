@@ -48,6 +48,9 @@
     <Compile Include="AlternativesSetViewer.cs" />
     <Compile Include="DataSources\CsvReader.cs" />
     <Compile Include="DataSources\IAlternativesSource.cs" />
+    <Compile Include="ParameterProperties.cs" />
+    <Compile Include="ParametersEnumerator.cs" />
+    <Compile Include="ProblemDefinition.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -10,8 +10,10 @@ namespace McdaCommon
     {
         private List<double> values;
         public IReadOnlyList<double> Values { get { return values; } }
-        public Alternative(IEnumerable<double> values)
+        public string Name { get; }
+        public Alternative(string name, IEnumerable<double> values)
         {
+            this.Name = name;
             this.values = new List<double>(values);
         }
     }
