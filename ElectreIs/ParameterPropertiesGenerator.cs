@@ -20,7 +20,7 @@ namespace ElectreIs
                 var min = alternatives.Min(alt => alt.Values[i]);
                 var amplitude = max - min;
                 var preferenceThreshold = amplitude * relativePreference;
-                var vetoThreshold = amplitude * relativeVeto;
+                var vetoThreshold = amplitude > 2 ? amplitude * relativeVeto : 5;
                 string name = "p" + i;
                 double weight = random.NextDouble();
 

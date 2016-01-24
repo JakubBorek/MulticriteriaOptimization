@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace Qualiflex
 {
-    class Solver
+    public class Solver
     {
         private readonly ProblemDefinition problem;
+
+        public static int comparisons;
         public Solver(ProblemDefinition problem)
         {
             this.problem = problem;
@@ -40,9 +42,10 @@ namespace Qualiflex
         }
         private double calculateScoreForPair(Alternative assumedBetter, Alternative assumedWorse)
         {
+            comparisons++;
             return ParametersEnumerator.Enumerate(assumedBetter, assumedWorse, problem.Parameters)
                 .Sum(tr =>
-                calculateWeightedScoreForParameter(tr.Item1, tr.Item2, tr.Item3));
+                calculateWeightedScoreForParameter(tr.Item1, tr.Item2, tr.Item3));       
         }
 
         private double calculateWeightedScoreForParameter(double assumedBetter, double assumedWorse, ParameterProperties parameter)

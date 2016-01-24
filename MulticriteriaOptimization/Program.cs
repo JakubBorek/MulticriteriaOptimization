@@ -4,6 +4,7 @@ using McdaCommon.DataSources;
 using Qualiflex;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,19 +17,29 @@ namespace MO
         [STAThread]
         static void Main(string[] args)
         {
-            demoQualiflex();
+            for (int i = 1; i <= 10; i++)
+            {
+                var stopwatch = new Stopwatch();
+                Console.WriteLine("" + i + " alternatives");
+                stopwatch.Start();
+                demoQualiflex(i);
+                stopwatch.Stop();
+                Console.WriteLine("Comparisons: " + Solver.comparisons);
+                Console.WriteLine("Elapsed: " + stopwatch.Elapsed);
+                Console.WriteLine();
+            }
             Console.ReadKey();
         }
 
-        static void demoQualiflex()
+        static void demoQualiflex(int size)
         {
-            var problem = getSampleProblem(7);
+            var problem = getSampleProblem(size);
             var bestRanking = problem.SolveWithQualiflex();
             printRanking(bestRanking);
         }
         static void demoElectrIs()
         {
-            var problem = getSampleProblem(30);
+            var problem = getSampleProblem(100);
             var superiorityMatrix = problem.SolveWithElectreIs();
             superiorityMatrix.Visualize();
         }
@@ -37,15 +48,15 @@ namespace MO
         {
             var reader = new CsvReader("Data/australian.dat", ' ');
             var alternatives = reader.ReadAlternatives().Take(alternativesCount).ToList();
-            var parameters = ParameterPropertiesGenerator.GenerateSampleProperties(alternatives, 0.15, 0.3);
+            var parameters = ParameterPropertiesGenerator.GenerateSampleProperties(alternatives, 0.01, 0.01);
 
-            return new ProblemDefinition(alternatives, parameters, 0.5);
+            return new ProblemDefinition(alternatives, parameters, 0.99999);
         }
         private static void printRanking(IReadOnlyList<Alternative> ranking)
         {
             foreach (var v in ranking)
             {
-                Console.Write(v.Name + " ");
+                Console.Write(v.Name + " > ");
             }
             Console.WriteLine();
         }

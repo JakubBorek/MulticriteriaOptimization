@@ -1,4 +1,5 @@
-﻿using System;
+﻿using McdaCommon;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,11 +11,8 @@ namespace Qualiflex
     {
         static void Main(string[] args)
         {
-            var testArr = new List<int> { 1, 2, 3 };
-            foreach (var p in testArr.GetPermutations())
-            {
-                print(p);
-            }
+            var testArr = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
+            var t = testArr.GetRandomElements(3).ToList();
             Console.ReadKey();
         }
 
